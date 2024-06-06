@@ -1,8 +1,8 @@
 #!/bin/sh
-device_mac = "95:90:BB:A0:0B:CC"
-pod_sink = "bluez_sink.95_90_BB_A0_0B_CC.a2dp_sink" 
+device_mac = "Write your Mac add"
+pod_sink = "bluez_sink.'Your Mad-add'.a2dp_sink" 
 
 bluetoothctl power off
 bluetoothctl power on
-bluetoothctl connect 95:90:BB:A0:0B:CC 
+bluetoothctl connect $device_mac
 pactl set-default-sink $pod_sink
