@@ -210,7 +210,7 @@ bindsym XF86AudioNext exec playerctl nex-scale /home/technocratPictureswallpaper
 bindsym XF86AudioPrev exec playerctl previous
 
 # For Loading with i3
-exec_always feh --bg-scale /home/technocrat/Pictures/wallpaper.jpg
+exec_always feh --bg-scale /home/technocrat/Pictures/wallpaper1.jpg
 
 # For connecting Bluetooth
 bindsym $mod+b exec --no-startup-id /home/technocrat/.local/bin/connectHeadphone 
@@ -222,11 +222,15 @@ bindsym --release $mod+y exec --no-startup-id import -window root ~/Pictures/scr
 # suspend
 bindsym $mod+Shift+period exec systemctl suspend
 
+# clipboard
+exec --no-startup-id clipit
 
 # STARTUP CODE
 # Set up the initial layout
 #exec --no-startup-id i3-msg 'workspace 1; append_layout ~/.config/i3/workspace-1.json'
 exec --no-startup-id i3-msg 'workspace 1; exec i3-sensible-terminal'
-exec --no-startup-id sh -c 'sleep 1 && i3-msg "workspace 2; exec brave-browser"'
+exec --no-startup-id sh -c 'sleep 1 && workspace 2;  exec brave-browser'
 #exec --no-startup-id sh -c 'sleep 5 && i3-msg "workspace 4; exec brave-browser --incognito"'
+
+exec xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapping Enabled" 1
 
